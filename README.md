@@ -139,7 +139,7 @@ arquivo de profile a propriedade `Clear-Host` logo no começo do arquivo.
 #### Estratégia 1 flag `-nologo` (recomendada)
 ##### Windows Terminal
 Você precisa procurar nesse array o perfil do powershell e adicionar a flag -nologo no final, o meu ficou assim:
-```json
+```jsonc
 {
   // ...
   "profiles": {
@@ -161,7 +161,7 @@ Você precisa procurar nesse array o perfil do powershell e adicionar a flag -no
 ##### VSCode
 No VSCode você deve adicionar a flag na propriedade `terminal.integrated.shellArgs.windows` veja no exemplo:
 
-```json
+```jsonc
 {
   //...
   // Removendo mensagem de inicio do powershell
@@ -188,7 +188,7 @@ Clear-Host
 ### Configurar o VSCode
 O PowerShell no windows já é o terminal padrão do VSCode, mas caso o seu não seja, abra o arquivo de configurações do VSCode e configure a propriedade `terminal.integrated.shell.windows`:
 
-```json
+```jsonc
 {
   //...
   // Configurando powershell como terminal padrão
@@ -205,7 +205,7 @@ O PowerShell no windows já é o terminal padrão do VSCode, mas caso o seu não
 
 Essas são as minhas configurações do windows terminal, nela eu faço apenas algumas configurações de aparência e removo a mensagem de inicio (logo) do powershell. Adicionei também duas opções de temas, `Dracula` e `OneDarkPro` você pode alterar o tema pela propriedade `colorScheme` do arquivo de configurações. `Não copie e cole esse trecho no seu arquivo de configurações, pode ser que a sua versão (no futuro) seja diferente da minha e isso gere erros. Configure as propriedades na mão, assim você vai aprendendo um pouco mais sobre elas`.
 
-```json
+```jsonc
 // Arquivo de configuração do windows-terminal (https://github.com/microsoft/terminal)
 {
   // ...

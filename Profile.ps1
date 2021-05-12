@@ -1,6 +1,6 @@
 # Importando módulos
-Import-Module -Name posh-git
-Import-Module -Name PSReadLine
+Import-Module -Name posh-git -RequiredVersion 1.0.0
+Import-Module -Name PSReadLine -RequiredVersion 2.1.0
 
 Import-Module $PSScriptRoot\src\main.psm1
 Import-Module $PSScriptRoot\src\libs\powerls.psm1

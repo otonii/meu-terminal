@@ -1,14 +1,13 @@
-[Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
 Write-Host "Configurando Terminal - Otonii"
 
 # Instalando módulos necessários
-Write-Host "Verificando módulos necessários"
-if (-not (Get-Module -ListAvailable -Name "posh-git")) {
+Write-Host "Verificando modulos necessarios"
+if ((Get-InstalledModule -Name "posh-git" -RequiredVersion 1.0.0 -ErrorAction SilentlyContinue) -eq $null) {
   Write-Host "Instalando posh-git"
   Install-Module posh-git -Scope CurrentUser -Force -SkipPublisherCheck
 }
 
-if (-not (Get-Module -ListAvailable -Name "PSReadLine")) {
+if ((Get-InstalledModule -Name "PSReadLine" -RequiredVersion 2.1.0 -ErrorAction SilentlyContinue) -eq $null) {
   Write-Host "Instalando PSReadLine"
   Install-Module PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 }

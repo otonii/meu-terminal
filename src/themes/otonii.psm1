@@ -12,6 +12,11 @@ function Write-Theme {
     $promtSymbolColor = [ConsoleColor]::Red
   }
 
+  # Check if the virtualenv is active and 
+  if ($_PYTHON_VENV_PROMPT_PREFIX) {
+    $prompt +=  Write-Prompt -Object "($_PYTHON_VENV_PROMPT_PREFIX)" -ForegroundColor ([ConsoleColor]::DarkGreen)
+  }
+
   #check for elevated prompt
   If (Test-Administrator) {
     $prompt += Write-Prompt -Object "# " -ForegroundColor([ConsoleColor]::DarkYellow)

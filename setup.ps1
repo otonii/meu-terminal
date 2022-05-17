@@ -2,14 +2,14 @@ Write-Host "Configurando Terminal - Otonii"
 
 # Instalando módulos necessários
 Write-Host "Verificando modulos necessarios"
-if ((Get-InstalledModule -Name "posh-git" -RequiredVersion 1.0.0 -ErrorAction SilentlyContinue) -eq $null) {
+if ((Get-InstalledModule -Name "posh-git" -RequiredVersion 1.1.0 -ErrorAction SilentlyContinue) -eq $null) {
   Write-Host "Instalando posh-git"
-  Install-Module posh-git -Scope CurrentUser -Force -SkipPublisherCheck
+  Install-Module posh-git -RequiredVersion 1.1.0 -Scope CurrentUser -Force -SkipPublisherCheck
 }
 
 if ((Get-InstalledModule -Name "PSReadLine" -RequiredVersion 2.1.0 -ErrorAction SilentlyContinue) -eq $null) {
   Write-Host "Instalando PSReadLine"
-  Install-Module PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
+  Install-Module PSReadLine -RequiredVersion 2.1.0 -Scope CurrentUser -Force -SkipPublisherCheck
 }
 
 # Criando pasta do profile caso não exista
